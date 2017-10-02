@@ -58,12 +58,6 @@ There is 100ms latency between actuation and the simulator. To deal with it, I u
 
 #### 3. Timestep Length and Frequency
 
-The timestep length `N` and frequency `dt` are using to decide how many state the we are looking into the future. If the values are too large, it seems that the model react slower. If the value are too small, the model becomes unstable. I finally use N = 10 and dt = 0.1 .  
+The `N*dt` value is using to decide how many time that we are predicting into the future. If the `dt` values is too large, it may not have good resolution for calculation. If `dt` is too small, itmay effect by the latency. `dt = 0.1` seems to be a reasonable choice here.Too small `N` gives us not enough state in the future, which can effect controller's performance and if `N` is too large, it will take too much time to compute. I finally use `N = 10`.  
 
 
-
-
-
-```python
-
-```
